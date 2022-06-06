@@ -1,0 +1,83 @@
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+input[type="checkbox"] {
+	visibility: hidden;
+	&:checked + label {
+		background-color: #74afd1;
+		&:before {
+			transform: translateX(101px);
+			background-color: #a5d1eb;
+		}
+
+        #moon{
+            opacity: 0 ;
+            transform: translateY(80px);
+        }
+
+
+        #sun{
+            opacity: 1 ;
+            transform: translateY(0);
+        }
+	}
+}
+
+label {
+	display: flex;
+	width: 180px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    height: 77px;
+	border-radius: 99em;
+	position: relative;
+	transition: transform .75s ease-in-out;
+    background-color: #2d3f70;
+	transform-origin: 50% 50%;
+	cursor: pointer;
+	overflow: hidden;
+    z-index: 1;
+	&:before {
+		transition: transform .50s ease;
+        transition-delay: .2s;
+		content: "";
+		display: block;
+		position: absolute;
+		width: 54px;
+		height: 54px;
+		background-color: #5b6fa5;
+		border-radius: 50%;
+		top: 12px;
+		left: 12px;
+        z-index: -1;
+	}
+
+
+    .icon-btn{
+        position: absolute; 
+        transition: all .4s ease;
+        transition-delay : .2s ;
+    }
+
+    #moon{
+        width: 4em ;
+        top: .4em;
+        right : .4em;
+    }
+
+    #sun{
+        top : .9em ; 
+        width: 3em ;
+        left: 1em ;
+        transform: translateY(80px);
+        opacity: 0 ;
+        z-index: 1;
+    }
+}
